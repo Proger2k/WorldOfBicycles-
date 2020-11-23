@@ -1,0 +1,51 @@
+﻿@model WorldOfBicycles.ViewModels.ShopCartViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Корзина";
+}
+    <div class="container pt-5">
+        <section class="text-center mb-4 pt-5">
+            <div class="row wow fadeIn">
+                @foreach (var i in Model.ShopCart.ShopCartItems)
+                {
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="card">
+                            <div class="view overlay">
+                                <img class="card-img-top" src="@i.Product.Img" alt="Js" />
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <div class="card-body text-center">
+                                <a class="grey-text">
+                                    <h5>@i.Product.Description</h5>
+                                </a>
+                                <h5>
+                                    <strong>
+                                        <a class="dark-grey-text">@i.Product.Name <span class="badge-pill danger-color">NEW</span></a>
+                                    </strong>
+                                </h5>
+                                <h4 class="font-weight-bold blue-text">
+                                    <strong>@i.Product.Price$</strong>
+                                </h4>
+                                <h4 class="font-weight-bold blue-text">
+                                    <strong>Количество: </strong>
+                                </h4>
+                                <h4 class="font-weight-bold blue-text">
+                                    <strong>@i.Product.ProductCountInShopCart</strong>
+                                </h4>
+                                <a class="btn btn-danger mb-5" asp-controller="ShopCart" asp-action="Index" asp-route-id="@i.Product.Id">Убрать товар</a>
+                            </div>      
+                               
+                        </div>
+                    </div>
+                }
+            </div>
+        </section>
+        <h4 class="font-weight-bold blue-text">
+            <strong>Сумма к оплате: @Model.Total$</strong>
+        </h4>
+        <a class="btn btn-danger mb-5" asp-controller="Order" asp-action="Order">Оплатить</a>
+    </div>

@@ -1,0 +1,33 @@
+﻿@model WorldOfBicycles.ViewModels.LoginViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Login";
+}
+
+
+<bodys>
+    <form method="post" asp-action="Login" asp-controller="Account" class="form" asp-route-returnUrl="@Model.ReturnUrl">
+        <div asp-validation-summary="ModelOnly"></div>
+
+        <h3 class="form__title">Register</h3>
+        <div class="form__input-wrapper" data-input="input-1">
+            <input type="text" class="form__input" data-input="input-1" asp-for="Email">
+            <p class="form__input-text" data-input="input-1">Email</p>
+            <span asp-validation-for="Email"></span>
+        </div>
+        <div class="form__input-wrapper" data-input="input-1">
+            <input type="password" class="form__input" data-input="input-1" asp-for="Password">
+            <p class="form__input-text" data-input="input-1">Password</p>
+            <span asp-validation-for="Password"></span>
+        </div>
+        @*<div class="pt-4">
+            <label asp-for="RememberMe"></label><br />
+            <input asp-for="RememberMe" />
+        </div>*@
+        <button class="form__btn">Login</button>
+        <p class="form__help">Don't have an account? <a href="#">Sign Up</a></p>
+    </form>
+</bodys>
+

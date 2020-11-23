@@ -1,0 +1,26 @@
+﻿@model WorldOfBicycles.Data.Models.Product
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="col-lg-3 col-md-6 mb-4">
+    <div class="card">
+        <div class="view overlay">
+            <img class="card-img-top" src="@Model.Img" alt="Js" />
+            <a asp-controller="@ViewBag.Controller" asp-action="@ViewBag.Action" asp-route-id="@Model.Id">
+                <div class="mask rgba-white-slight"></div>
+            </a>
+        </div>
+        <div class="card-body text-center">
+            <a class="grey-text">
+                <h5>@Model.Description</h5>
+            </a>
+            <h5>
+                <strong>
+                    <a class="dark-grey-text">@Model.Name <span class="badge-pill danger-color">NEW</span></a>
+                </strong>
+            </h5>
+            <h4 class="font-weight-bold blue-text">
+                <strong>@Model.Price$</strong>
+            </h4>
+        </div>
+    </div>
+</div>
