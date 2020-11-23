@@ -1,10 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using WorldOfBicycles.Data.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace WorldOfBicycles.Data
 {
@@ -17,5 +13,6 @@ namespace WorldOfBicycles.Data
 		public DbSet<Product> Products { get; set; }
 		public DbSet<Category> Categories { get; set; }
 		public DbSet<ShopCartItem> ShopCartItems { get; set; }
+		public DbSet<Rent> Rents { get; set; }
 	}
 }

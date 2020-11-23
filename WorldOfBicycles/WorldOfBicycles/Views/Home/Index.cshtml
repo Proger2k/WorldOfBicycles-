@@ -34,7 +34,7 @@
                         <path fill-rule="evenodd"
                               d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15h9.286zM5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8H.8z" />
                     </svg>
-                    <h3><a href="#">Арендовать</a></h3>
+                    <h3><a asp-controller="Rent" asp-action="Index">Арендовать</a></h3>
                 </div>
             </div>
             <div class="col-xl-2 col-md-4 col-6">
@@ -44,7 +44,7 @@
                         <path fill-rule="evenodd"
                               d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15h9.286zM5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8H.8z" />
                     </svg>
-                    <h3><a href="#">Перейти к обсуждению </a></h3>
+                    <h3><a asp-controller="Chat" asp-action="Index">Перейти к обсуждению </a></h3>
                 </div>
             </div>
         </div>
@@ -112,7 +112,7 @@
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam dolores facilis eveniet hic nam
             perspiciatis quidem sit libero aliquid nemo.
         </p>
-        <a href="{% url 'rental' %}" class="cta-btn">Call to action</a>
+        <a asp-controller="Rent" asp-action="Index" class="cta-btn">Арендовать</a>
     </div>
 </section>
 <section id="team" class="team">

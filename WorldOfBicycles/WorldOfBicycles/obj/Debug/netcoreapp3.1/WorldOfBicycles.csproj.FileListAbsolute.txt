@@ -289,8 +289,6 @@ C:\Users\Home\Desktop\WorldOfBicycles\WorldOfBicycles\WorldOfBicycles\bin\Debug\
 C:\Users\Home\Desktop\WorldOfBicycles\WorldOfBicycles\WorldOfBicycles\obj\Debug\netcoreapp3.1\WorldOfBicycles.csprojAssemblyReference.cache
 C:\Users\Home\Desktop\WorldOfBicycles\WorldOfBicycles\WorldOfBicycles\obj\Debug\netcoreapp3.1\WorldOfBicycles.AssemblyInfoInputs.cache
 C:\Users\Home\Desktop\WorldOfBicycles\WorldOfBicycles\WorldOfBicycles\obj\Debug\netcoreapp3.1\WorldOfBicycles.AssemblyInfo.cs
-C:\Users\Home\Desktop\WorldOfBicycles\WorldOfBicycles\WorldOfBicycles\obj\Debug\netcoreapp3.1\WorldOfBicycles.csproj.CoreCompileInputs.cache
-C:\Users\Home\Desktop\WorldOfBicycles\WorldOfBicycles\WorldOfBicycles\obj\Debug\netcoreapp3.1\WorldOfBicycles.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Home\Desktop\WorldOfBicycles\WorldOfBicycles\WorldOfBicycles\obj\Debug\netcoreapp3.1\WorldOfBicycles.RazorAssemblyInfo.cache
 C:\Users\Home\Desktop\WorldOfBicycles\WorldOfBicycles\WorldOfBicycles\obj\Debug\netcoreapp3.1\WorldOfBicycles.RazorAssemblyInfo.cs
 C:\Users\Home\Desktop\WorldOfBicycles\WorldOfBicycles\WorldOfBicycles\obj\Debug\netcoreapp3.1\WorldOfBicycles.TagHelpers.input.cache
@@ -324,3 +322,8 @@ C:\Users\Home\Desktop\WorldOfBicycles\WorldOfBicycles\WorldOfBicycles\obj\Debug\
 C:\Users\Home\Desktop\WorldOfBicycles\WorldOfBicycles\WorldOfBicycles\obj\Debug\netcoreapp3.1\WorldOfBicycles.dll
 C:\Users\Home\Desktop\WorldOfBicycles\WorldOfBicycles\WorldOfBicycles\obj\Debug\netcoreapp3.1\WorldOfBicycles.pdb
 C:\Users\Home\Desktop\WorldOfBicycles\WorldOfBicycles\WorldOfBicycles\obj\Debug\netcoreapp3.1\WorldOfBicycles.genruntimeconfig.cache
+C:\Users\Home\Desktop\WorldOfBicycles\WorldOfBicycles\WorldOfBicycles\obj\Debug\netcoreapp3.1\Razor\Views\Rent\Index.cshtml.g.cs
+C:\Users\Home\Desktop\WorldOfBicycles\WorldOfBicycles\WorldOfBicycles\obj\Debug\netcoreapp3.1\Razor\Views\AddToDataBase\Categories.cshtml.g.cs
+C:\Users\Home\Desktop\WorldOfBicycles\WorldOfBicycles\WorldOfBicycles\obj\Debug\netcoreapp3.1\WorldOfBicycles.csproj.CoreCompileInputs.cache
+C:\Users\Home\Desktop\WorldOfBicycles\WorldOfBicycles\WorldOfBicycles\obj\Debug\netcoreapp3.1\WorldOfBicycles.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Home\Desktop\WorldOfBicycles\WorldOfBicycles\WorldOfBicycles\bin\Debug\netcoreapp3.1\Microsoft.OData.Edm.dll

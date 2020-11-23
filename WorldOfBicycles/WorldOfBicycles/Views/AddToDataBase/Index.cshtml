@@ -55,9 +55,12 @@
             <label asp-for="Product.Cat"></label>
             <div class="col-12">
                 <select asp-for="Product.Cat">
-                    <option value="Рубашки">Рубашки</option>
-                    <option value="Кофты">Кофта</option>
-                    <option value="Спортивная одежда">Спортивная одежда</option>
+                    @{
+                        foreach (var item in Model.Categories)
+                        {
+                            <option value="@item.Name">@item.Name</option>
+                        }
+                    }
                 </select>
             </div>
         </div>

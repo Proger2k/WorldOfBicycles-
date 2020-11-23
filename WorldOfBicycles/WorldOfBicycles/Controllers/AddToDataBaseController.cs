@@ -2,11 +2,7 @@
 using WorldOfBicycles.Data;
 using WorldOfBicycles.Data.Models;
 using WorldOfBicycles.ViewModels;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-
 namespace WorldOfBicycles.Controllers
 {
 	public class AddToDataBaseController : Controller
@@ -22,9 +18,19 @@ namespace WorldOfBicycles.Controllers
 		[HttpGet]
 		public ActionResult Index()
 		{
+			var categories = new AddToDataBaseViewModel();
+			categories.Categories = dBContext.Categories;
+			ViewBag.ProductCount = shopCart.ProductCount();
+			return View(categories);
+		}
+
+		[HttpGet]
+		public ActionResult Categories()
+		{
 			ViewBag.ProductCount = shopCart.ProductCount();
 			return View();
 		}
+
 		[HttpPost]
 		public RedirectToActionResult Index(Product product)
 		{
@@ -35,6 +41,15 @@ namespace WorldOfBicycles.Controllers
 			dBContext.SaveChanges();
 
 			return RedirectToAction("Index","Home");
+		}
+
+		[HttpPost]
+		public RedirectToActionResult Categories(Category category)
+		{
+			dBContext.Categories.Add(category);
+			dBContext.SaveChanges();
+
+			return RedirectToAction("Index", "Home");
 		}
 	}
 }

@@ -1,0 +1,42 @@
+﻿@model WorldOfBicycles.ViewModels.RentViewModel  
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Магазин одежды";
+}
+
+<h3>Добавить товар</h3>
+<div class="row p-5">
+    <form asp-action="Index" method="post" class="form-horizontal">
+        <div class="form-group">
+            <label asp-for="Rental.Category"></label>
+            <div class="col-12">
+                <select asp-for="Rental.Category">
+                    @{
+                        foreach (var item in Model.Categories)
+                        {
+                            <option value="@item.Name">@item.Name</option>
+                        }
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Rental.Date"></label>
+            <div class="col-12">
+                <input asp-for="Rental.Date" class="form-control" />
+                <span asp-validation-for="Rental.Date" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Rental.Duration"></label>
+            <div class="col-12">
+                <input asp-for="Rental.Duration" class="form-control" />
+                <span asp-validation-for="Rental.Duration" class="text-danger"></span>
+            </div>
+        </div>
+
+        <input class="btn btn-success" type="submit" value="Добавить Товар" />
+    </form>
+</div>

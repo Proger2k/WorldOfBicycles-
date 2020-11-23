@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace WorldOfBicycles.Data.Models
+﻿namespace WorldOfBicycles.Data.Models
 {
 	public class ShopCartItem
 	{
