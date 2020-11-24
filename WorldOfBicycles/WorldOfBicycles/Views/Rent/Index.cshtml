@@ -3,7 +3,7 @@
 
 @{
     Layout = "_Layout";
-    ViewData["Title"] = "Магазин одежды";
+    ViewData["Title"] = "Аренда велосипедов";
 }
 
 <h3>Добавить товар</h3>
@@ -23,6 +23,13 @@
             </div>
         </div>
         <div class="form-group">
+            <label asp-for="Rental.ProductCount"></label>
+            <div class="col-12">
+                <input asp-for="Rental.ProductCount" class="form-control" />
+                <span asp-validation-for="Rental.ProductCount" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
             <label asp-for="Rental.Date"></label>
             <div class="col-12">
                 <input asp-for="Rental.Date" class="form-control" />
@@ -37,6 +44,6 @@
             </div>
         </div>
 
-        <input class="btn btn-success" type="submit" value="Добавить Товар" />
+        <input class="btn btn-success" type="submit" value="Оформить заказ" />
     </form>
 </div>

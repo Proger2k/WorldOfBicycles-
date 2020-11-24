@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using WorldOfBicycles.Data;
 using WorldOfBicycles.Data.Models;
 using WorldOfBicycles.ViewModels;
 
@@ -7,20 +7,20 @@ namespace WorldOfBicycles.Controllers
 {
 	public class RentController : Controller
 	{
-		DbContext db;
+		DBContext db;
 		ShopCart shopCart;
-		User user;
-		public RentController(DbContext db, ShopCart shopCart, User user)
+
+		public RentController(DBContext db, ShopCart shopCart)
 		{
 			this.db = db;
 			this.shopCart = shopCart;
-			this.user = user;
 		}
 
 		[HttpGet]
 		public IActionResult Index()
 		{
 			var categories = new RentViewModel();
+			categories.Categories = db.Categories;
 			ViewBag.ProductCount = shopCart.ProductCount();
 			return View(categories);
 		}
