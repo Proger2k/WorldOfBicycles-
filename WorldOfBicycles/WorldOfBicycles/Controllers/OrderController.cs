@@ -25,7 +25,7 @@ namespace WorldOfBicycles.Controllers
 			}
 			dbContext.SaveChanges();
 
-			return RedirectToAction("Index", "Home");
+			return RedirectToAction("Payment", "ShopCart");
 		}
 	}
 }

@@ -327,3 +327,5 @@ C:\Users\Home\Desktop\WorldOfBicycles\WorldOfBicycles\WorldOfBicycles\obj\Debug\
 C:\Users\Home\Desktop\WorldOfBicycles\WorldOfBicycles\WorldOfBicycles\obj\Debug\netcoreapp3.1\WorldOfBicycles.csproj.CoreCompileInputs.cache
 C:\Users\Home\Desktop\WorldOfBicycles\WorldOfBicycles\WorldOfBicycles\obj\Debug\netcoreapp3.1\WorldOfBicycles.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Home\Desktop\WorldOfBicycles\WorldOfBicycles\WorldOfBicycles\bin\Debug\netcoreapp3.1\Microsoft.OData.Edm.dll
+C:\Users\Home\Desktop\WorldOfBicycles\WorldOfBicycles\WorldOfBicycles\obj\Debug\netcoreapp3.1\Razor\Views\Profile\Index.cshtml.g.cs
+C:\Users\Home\Desktop\WorldOfBicycles\WorldOfBicycles\WorldOfBicycles\obj\Debug\netcoreapp3.1\Razor\Views\ShopCart\Payment.cshtml.g.cs

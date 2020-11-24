@@ -63,5 +63,10 @@ namespace WorldOfBicycles.Controllers
 
 			return RedirectToAction("Index");
 		}
+
+		public ViewResult Payment()
+		{
+			return View();
+		}
 	}
 }

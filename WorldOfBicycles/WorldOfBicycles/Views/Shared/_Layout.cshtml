@@ -123,7 +123,7 @@
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item">
-                                <a class="nav-link waves-effect">@User.Identity.Name</a>
+                                <a asp-controller="Profile" asp-action="Index" class="nav-link waves-effect">@User.Identity.Name</a>
                             </li>
 
                             <li class="nav-item">
