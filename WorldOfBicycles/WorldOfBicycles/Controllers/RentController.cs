@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using WorldOfBicycles.Data;
 using WorldOfBicycles.Data.Models;
@@ -30,15 +32,43 @@ namespace WorldOfBicycles.Controllers
 				products.Products = db.Products.Where(cat => cat.Category.Name.ToLower() == category.ToLower());
 			} 
 			ViewBag.Controller = "Rent";
-			ViewBag.Action = "Index";
+			ViewBag.Action = "СhooseQuantity";
 			ViewBag.ProductCount = shopCart.ProductCount();
 			return View(products);
 		}
 
-		[HttpPost]
-		public IActionResult Index(Rent rent)
+		[HttpGet]
+		public IActionResult СhooseQuantity(int id)
 		{
-			return View();
+			var product = db.Products.FirstOrDefault(i => i.Id == id);
+			var obj = new AddToCartViewModel()
+			{
+				Product = product
+			};
+			ViewBag.ProductCount = shopCart.ProductCount();
+			return View(obj);
+		}
+
+		[HttpPost]
+		public IActionResult Payment(Product prod, int id)
+		{
+			Product product = db.Products.FirstOrDefault(x => x.Id == id);
+			var payment = new PaymentViewModel();
+
+			payment.Rent = new Rent();
+			payment.Rent.Product = product;
+			payment.Rent.ProductCount = prod.Count;
+
+			return View(payment);
+		}
+
+		[HttpPost]
+		public RedirectToActionResult FinishThePayment(Rent rent, int id)
+		{
+			var rental = rent;
+
+
+			return RedirectToAction("Index");
 		}
 	}
 }

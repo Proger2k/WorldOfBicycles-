@@ -3,10 +3,8 @@ using WorldOfBicycles.Data.Models;
 
 namespace WorldOfBicycles.ViewModels
 {
-	public class RentViewModel
+	public class PaymentViewModel
 	{
 		public Rent Rent { get; set; }
-		public IEnumerable<Product> Products { get; set; }
-		public IEnumerable<Category> Categories { get; set; }
 	}
 }

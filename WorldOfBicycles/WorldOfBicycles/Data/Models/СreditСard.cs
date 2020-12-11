@@ -8,7 +8,7 @@ namespace WorldOfBicycles.Data.Models
 
 		[Required]
 		[StringLength(16, ErrorMessage = "Номер карты должен содержать 16 цифр", MinimumLength = 16)]
-		public int CardNumber { get; set; }
+		public string CardNumber { get; set; }
 
 		public string Validity { get; set; }
 

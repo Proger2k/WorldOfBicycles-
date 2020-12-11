@@ -43,6 +43,7 @@ namespace WorldOfBicycles.Controllers
 
 			return View(obj); 
 		}
+
 		public RedirectToActionResult AddToCart(Product prod, int id)
 		{
 			var product = dbContext.Products.FirstOrDefault(i => i.Id == id);

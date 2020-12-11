@@ -330,3 +330,4 @@ C:\Users\Home\Desktop\WorldOfBicycles\WorldOfBicycles\WorldOfBicycles\bin\Debug\
 C:\Users\Home\Desktop\WorldOfBicycles\WorldOfBicycles\WorldOfBicycles\obj\Debug\netcoreapp3.1\Razor\Views\Profile\Index.cshtml.g.cs
 C:\Users\Home\Desktop\WorldOfBicycles\WorldOfBicycles\WorldOfBicycles\obj\Debug\netcoreapp3.1\Razor\Views\ShopCart\Payment.cshtml.g.cs
 C:\Users\Home\Desktop\WorldOfBicycles\WorldOfBicycles\WorldOfBicycles\obj\Debug\netcoreapp3.1\Razor\Views\Rent\Payment.cshtml.g.cs
+C:\Users\Home\Desktop\WorldOfBicycles\WorldOfBicycles\WorldOfBicycles\obj\Debug\netcoreapp3.1\Razor\Views\Rent\СhooseQuantity.cshtml.g.cs
