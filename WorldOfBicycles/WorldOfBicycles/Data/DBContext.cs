@@ -14,5 +14,7 @@ namespace WorldOfBicycles.Data
 		public DbSet<Category> Categories { get; set; }
 		public DbSet<ShopCartItem> ShopCartItems { get; set; }
 		public DbSet<Rent> Rents { get; set; }
+		public DbSet<Сheck> Checks { get; set; }
+		public DbSet<СreditСard> СreditСards { get; set; }
 	}
 }

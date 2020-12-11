@@ -10,8 +10,11 @@ namespace WorldOfBicycles.Data.Models
 		[BindNever]
 		public int Id { get; set; }
 
-		[Display(Name = "Выберите категорию")]
-		public Category Category { get; set; }
+		[Display(Name = "Имя")]
+		public string FirstName { get; set; }
+
+		[Display(Name = "Фамилия")]
+		public string Surname { get; set; }
 
 		[Display(Name = "Введите количество велосипедов для аренды")]
 		public int ProductCount { get; set; }
@@ -25,7 +28,9 @@ namespace WorldOfBicycles.Data.Models
 
 		[Required]
 		[StringLength(16, ErrorMessage = "Номер карты должен содержать 16 цифр", MinimumLength = 16)]
+
 		public int CardNumber { get; set; }
 		public User User { get; set; }
+		public Category Category { get; set; }
 	}
 }

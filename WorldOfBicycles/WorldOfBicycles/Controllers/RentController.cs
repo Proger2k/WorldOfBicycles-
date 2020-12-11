@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 using WorldOfBicycles.Data;
 using WorldOfBicycles.Data.Models;
 using WorldOfBicycles.ViewModels;
@@ -17,12 +18,21 @@ namespace WorldOfBicycles.Controllers
 		}
 
 		[HttpGet]
-		public IActionResult Index()
+		public ActionResult Index(string category)
 		{
-			var categories = new RentViewModel();
-			categories.Categories = db.Categories;
+			RentViewModel products = new RentViewModel();
+			if (string.IsNullOrEmpty(category))
+			{
+				products.Products = db.Products;
+			}
+			else
+			{
+				products.Products = db.Products.Where(cat => cat.Category.Name.ToLower() == category.ToLower());
+			} 
+			ViewBag.Controller = "Rent";
+			ViewBag.Action = "Index";
 			ViewBag.ProductCount = shopCart.ProductCount();
-			return View(categories);
+			return View(products);
 		}
 
 		[HttpPost]
