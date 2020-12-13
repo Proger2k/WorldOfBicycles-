@@ -13,79 +13,71 @@ namespace WorldOfBicycles.Data
 				db.Products.AddRange(
 					new Product()
 					{
-						Name = "Рубашка",
-						Description = "Красная",
+						Name = "Comanche Strada",
 						Count = 10,
 						Price = 250,
 						Discount = 500,
 						Img = "/img/SampleData/1.jpg",
-						Category = Categories["Рубашки"]
+						Category = Categories["Спортивные велосипеды"]
 					},
 					new Product()
 					{
-						Name = "Рубашка",
-						Description = "Светлая",
+						Name = "Comanche Hurricane",
 						Price = 150,
 						Count = 10,
 						Discount = 250,
 						Img = "/img/SampleData/2.jpg",
-						Category = Categories["Рубашки"]
+						Category = Categories["Спортивные велосипеды"]
 					},
 					new Product()
 					{
-						Name = "Рубашка",
-						Description = "Темная",
+						Name = "Comanche Prairie",
 						Price = 300,
 						Count = 10,
 						Discount = 500,
 						Img = "/img/SampleData/3.jpg",
-						Category = Categories["Рубашки"]
+						Category = Categories["Спортивные велосипеды"]
 					},
 					new Product()
 					{
-						Name = "Кофта",
-						Description = "Темная",
+						Name = "Comanche Niagara",
 						Price = 150,
 						Count = 10,
 						Discount = 300,
-						Img = "/img/SampleData/4.jpg",
-						Category = Categories["Кофты"]
+						Img = "/img/SampleData/1г.jpg",
+						Category = Categories["Горные велосипеды"]
 					},
 					new Product()
 					{
-						Name = "Кофта",
-						Description = "Комуфляж",
+						Name = "Comanche Orinoco",
 						Price = 300,
 						Count = 10,
-						Img = "/img/SampleData/5.jpg",
-						Category = Categories["Кофты"]
+						Img = "/img/SampleData/2г.jpg",
+						Category = Categories["Горные велосипеды"]
 					},
 					new Product()
 					{
-						Name = "Мужской спортивный костюм",
-						Description = "Спорт",
+						Name = "Ranger Magnum",
 						Price = 500,
 						Count = 10,
-						Img = "/img/SampleData/6.jpg",
-						Category = Categories["Спортивная одежда"]
+						Img = "/img/SampleData/3г.jpg",
+						Category = Categories["Горные велосипеды"]
 					},
 					new Product()
 					{
-						Name = "Спотривный костюм",
-						Description = "Для бега",
+						Name = "Comanche Holiday",
 						Price = 450,
 						Count = 10,
-						Img = "/img/SampleData/7.jpg",
-						Category = Categories["Спортивная одежда"]
+						Img = "/img/SampleData/1город.jpg",
+						Category = Categories["Городские велосипеды"]
 					},
 					new Product()
 					{
-						Name = "Спортивная кофта",
-						Description = "Спорт",
+						Name = "Comanche Solo",
 						Price = 300,
 						Count = 10,
-						Img = "/img/SampleData/8.jpg",
-						Category = Categories["Спортивная одежда"]
+						Img = "/img/SampleData/2город.jpg",
+						Category = Categories["Городские велосипеды"]
 					}
 				);  
 			}
@@ -100,16 +92,19 @@ namespace WorldOfBicycles.Data
 				{
 					new Category()
 					{
-						Name = "Рубашки"
+						Name = "Спортивные велосипеды",
+						IsRent = true,
 					},
 					new Category()
 					{
-						Name = "Спортивная одежда"
+						Name = "Горные велосипеды",
+						IsRent = true,
 					},
 					new Category()
 					{
-						Name = "Кофты"
-					}
+						Name = "Городские велосипеды",
+						IsRent = true,
+					},
 				};
 
 				Category = new Dictionary<string, Category>();

@@ -33,11 +33,11 @@ namespace WorldOfBicycles
 			services.AddScoped(sp => ShopCart.GetCart(sp));
 
 			services.AddIdentity<User, IdentityRole>(opts => {
-				opts.Password.RequiredLength = 3;   // минимальная длина
-				opts.Password.RequireNonAlphanumeric = false;   // требуются ли не алфавитно-цифровые символы
-				opts.Password.RequireLowercase = false; // требуются ли символы в нижнем регистре
-				opts.Password.RequireUppercase = false; // требуются ли символы в верхнем регистре
-				opts.Password.RequireDigit = false; // требуются ли цифры
+				opts.Password.RequiredLength = 3;   
+				opts.Password.RequireNonAlphanumeric = false;   
+				opts.Password.RequireLowercase = false; 
+				opts.Password.RequireUppercase = false; 
+				opts.Password.RequireDigit = false; 
 			})
 				.AddEntityFrameworkStores<DBContext>();
 
@@ -55,7 +55,7 @@ namespace WorldOfBicycles
 			app.UseStaticFiles();
 			app.UseSession();
 
-			app.UseAuthentication();    // подключение аутентификации
+			app.UseAuthentication();    
 			app.UseAuthorization();
 
 			app.UseEndpoints(endpoints =>

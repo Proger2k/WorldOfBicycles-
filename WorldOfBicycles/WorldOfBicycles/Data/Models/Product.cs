@@ -39,5 +39,8 @@ namespace WorldOfBicycles.Data.Models
 
 		[BindNever]
 		public Category Category { get; set; }
+
+		[BindNever]
+		public List<Rent> Rents { get; set; }
 	}
 }

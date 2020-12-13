@@ -1,4 +1,4 @@
-﻿@model WorldOfBicycles.ViewModels.AddToCartViewModel
+﻿@model WorldOfBicycles.ViewModels.PaymentViewModel
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
@@ -10,14 +10,15 @@
     <div class="container dark-grey-text mt-5">
         <div class="row WOW rotateInUpLeft">
             <div class="col-md-6 mb-4">
-                <img src="@Model.Product.Img" alt="@Model.Product.Name" class="img-fluid">
+                <img src="@Model.Rent.Product.Img" alt="@Model.Rent.Product.Name" class="img-fluid">
 
             </div>
             <div class="col-md-6 mb-4">
                 <div class="p-4">
                     <div class="mb-3">
+                        <h3>@Model.Rent.Product.Name</h3>
                         <a href="">
-                            <span class="badge purple mr-1">@Model.Product.CategoryId</span>
+                            <span class="badge purple mr-1">@Model.Rent.Product.CategoryId</span>
                         </a>
                         <a href="">
                             <span class="badge blue mr-1">New</span>
@@ -28,24 +29,47 @@
                     </div>
                     <p class="lead">
                         <span class="mr-1">
-                            <strong>@Model.Product.Discount$</strong>
-                        </span>
-                        <span class="mr-1">
-                            @Model.Product.Price$
+                            @Model.Rent.Product.Price$
                         </span>
                     </p>
-                    <p class="lead font-weight-bold">Description</p>
                     <p>
-                        Хорошая одежда для хороших людей
+                        Хороший выбор для езды по городу
                     </p>
-                    <form action="" class="d-flex justify-content-left" method="post">
-                        <input type="number" value="1" arial-label="Search" style="width: 100px;" class="form-control" name="count" asp-for="@Model.Product.Count">
-                        <button type="submit" class="btn btn-primary btn-md my-0 p" asp-controller="Rent" asp-action="Payment" asp-route-id="@Model.Product.Id">
-                            Add to cart <i class="fa fa-shopping-cart ml-1"></i>
-                        </button>
+                    <form action="" class="needs-validation" method="post">
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label>Количество: </label>
+                                <input type="number" value="1" arial-label="Search" style="width: 100px;" class="form-control" asp-for="@Model.Rent.ProductCount">
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label asp-for="@Model.Rent.Date">Дата аренды: </label>
+                                    <input type="text" class="form-control" required asp-for="@Model.Rent.Date" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="@Model.Rent.Duration">Продолжительность в часах</label>
+                                <input type="text" class="form-control" required asp-for="@Model.Rent.Duration" />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <button type="submit" class="btn btn-primary btn-md my-0 p" asp-controller="Rent" asp-action="Payment" asp-route-id="@Model.Rent.Product.Id">
+                                    Перейти к оплате <i class="fa fa-shopping-cart ml-1"></i>
+                                </button>
+                            </div>
+                        </div>
                     </form>
+                    </div>
                 </div>
-            </div>
         </div>
     </div>
 </main>

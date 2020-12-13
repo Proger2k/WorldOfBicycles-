@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
-
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WorldOfBicycles.Data.Models
 {
@@ -16,16 +14,23 @@ namespace WorldOfBicycles.Data.Models
 		[Display(Name = "Фамилия")]
 		public string Surname { get; set; }
 
-		[NotMapped]
 		[Display(Name = "Введите дату и время аренды")]
 		public string Date { get; set; }
 
 		[Display(Name = "Введите продолжительность аренды")]
 		public string Duration { get; set; }
 		public СreditСard CreditCard { get; set; }
+		public int CredirCardId { get; set; }
 		public int ProductCount { get; set; }
+		public string Code { get; set; }
 		public User User { get; set; }
-		public Category Category { get; set; }
+
+		[BindNever]
+		public int ProductId { get; set; }
+
+		[BindNever]
 		public Product Product { get; set; }
+
+		public int Sum { get; set; }
 	}
 }

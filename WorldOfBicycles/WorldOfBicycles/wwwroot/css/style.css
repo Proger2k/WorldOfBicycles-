@@ -439,3 +439,8 @@ label #cancel {
 	vertical-align: baseline;
 	border-radius: .25rem;
 	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.rent{
+	background-color:orange;
+}

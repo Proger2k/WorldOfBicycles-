@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,34 +42,34 @@ namespace WorldOfBicycles.Controllers
 		public IActionResult СhooseQuantity(int id)
 		{
 			var product = db.Products.FirstOrDefault(i => i.Id == id);
-			var obj = new AddToCartViewModel()
+			Rent rent = new Rent();
+			rent.Product = product;
+			var obj = new PaymentViewModel()
 			{
-				Product = product
+				Rent = rent
 			};
 			ViewBag.ProductCount = shopCart.ProductCount();
 			return View(obj);
 		}
 
 		[HttpPost]
-		public IActionResult Payment(Product prod, int id)
+		public IActionResult Payment(Rent rent, int id)
 		{
 			Product product = db.Products.FirstOrDefault(x => x.Id == id);
 			var payment = new PaymentViewModel();
 
 			payment.Rent = new Rent();
 			payment.Rent.Product = product;
-			payment.Rent.ProductCount = prod.Count;
+			payment.Rent.ProductCount = rent.ProductCount;
+			payment.Rent.Duration = rent.Duration;
+			payment.Rent.Date = rent.Date;
+
+			int sum = product.Price * rent.ProductCount * Convert.ToInt32(rent.Duration);
+
+			payment.Rent.Sum = sum;
+			ViewBag.ProductCount = shopCart.ProductCount();
 
 			return View(payment);
-		}
-
-		[HttpPost]
-		public RedirectToActionResult FinishThePayment(Rent rent, int id)
-		{
-			var rental = rent;
-
-
-			return RedirectToAction("Index");
 		}
 	}
 }
