@@ -1,0 +1,76 @@
+﻿@model WorldOfBicycles.ViewModels.PaymentViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Аренда велосипедов";
+}
+
+<div class="container">
+    <div class="py-5 text-center" style="margin-top:60px;">
+        <h2>Оформление заказа</h2>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 order-md-2 mb-4">
+            <h4 class="mb-3">Адрес велопарка</h4>
+            <div style="width: 100%"><iframe width="400" height="1000" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=400&amp;height=1000&amp;hl=en&amp;q=Nauky%20Ave,%2014,%20Kharkiv,%20Kharkiv%20Oblast,%2061000+(Shi)&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe></div>
+        </div>
+        <div class="col-md-8 order-md-1">
+            <form class="needs-validation" novalidate method="post">
+
+                <div class="container">
+                    <div class="alert alert-warning">
+                        <b>Модель велосипеда:  </b> @Model.Rent.Product.Name<br />
+                        <b>Количество велосипедов:  </b> <input asp-for="@Model.Rent.ProductCount" value="@Model.Rent.ProductCount" style="background-color: #fff3cd; border: none;" /><br />
+                        <b>Дата аренды:  </b> <input asp-for="@Model.Rent.Date" value="@Model.Rent.Date" style="background-color: #fff3cd; border: none;" /><br />
+                        <b>Длительность аренды в часах:   </b> <input asp-for="@Model.Rent.Duration" value="@Model.Rent.Duration" style="background-color: #fff3cd; border: none;" /><br />
+                        <b>Сумма к оплате(грн.):   </b> <input asp-for="@Model.Rent.Sum" value="@Model.Rent.Sum" style="background-color: #fff3cd; border: none;" /><br />
+                    </div>
+                    
+                    <h4 class="mb-3">Оплата</h4>
+
+                    <div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="@Model.Rent.FirstName">Имя: </label>
+                                <input type="text" class="form-control" required asp-for="@Model.Rent.FirstName" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="@Model.Rent.Surname">Фамилия</label>
+                            <input type="text" class="form-control" required asp-for="@Model.Rent.Surname">
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="@Model.Rent.CreditCard.CardNumber">Номер кредитной карты</label>
+                            <input type="number" class="form-control" required asp-for="@Model.Rent.CreditCard.CardNumber" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <label asp-for="@Model.Rent.CreditCard.Validity">Срок действия</label>
+                            <input type="text" class="form-control" required asp-for="@Model.Rent.CreditCard.Validity">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label asp-for="@Model.Rent.CreditCard.CVV">CVV</label>
+                            <input type="text" class="form-control" required asp-for="@Model.Rent.CreditCard.CVV" />
+                        </div>
+                    </div>
+                    <hr class="mb-4">
+                    <button class="btn btn-primary btn-lg btn-block" type="submit" style="margin-bottom:100px" asp-controller="Profile" asp-action="FinishThePayment" asp-route-id="@Model.Rent.Product.Id">
+                        Оплатить
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

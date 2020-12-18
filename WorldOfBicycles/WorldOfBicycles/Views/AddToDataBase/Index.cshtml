@@ -1,0 +1,69 @@
+﻿@model WorldOfBicycles.ViewModels.AddToDataBaseViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Добавление товара в базу данных";
+}
+
+<h3>Добавить товар</h3>
+<div class="row p-5">
+    <form asp-action="Index" method="post" class="form-horizontal">
+        <div class="form-group">
+            <label asp-for="Product.Name"></label>
+            <div class="col-12">
+                <input asp-for="Product.Name" class="form-control" />
+                <span asp-validation-for="Product.Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Product.Img"></label>
+            <div class="col-12">
+                <input asp-for="Product.Img" class="form-control" />
+                <span asp-validation-for="Product.Img" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Product.Price"></label>
+            <div class="col-12">
+                <input asp-for="Product.Price" class="form-control" />
+                <span asp-validation-for="Product.Price" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Product.Count"></label>
+            <div class="col-12">
+                <input asp-for="Product.Count" class="form-control" />
+                <span asp-validation-for="Product.Count" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Product.Discount"></label>
+            <div class="col-12">
+                <input asp-for="Product.Discount" class="form-control" />
+                <span asp-validation-for="Product.Discount" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Product.Description"></label>
+            <div class="col-12">
+                <input asp-for="Product.Description" class="form-control" />
+                <span asp-validation-for="Product.Description" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Product.Cat"></label>
+            <div class="col-12">
+                <select asp-for="Product.Cat">
+                    @{
+                        foreach (var item in Model.Categories)
+                        {
+                            <option value="@item.Name">@item.Name</option>
+                        }
+                    }
+                </select>
+            </div>
+        </div>
+        <input class="btn btn-success" type="submit" value="Добавить Товар" />
+    </form>
+</div>

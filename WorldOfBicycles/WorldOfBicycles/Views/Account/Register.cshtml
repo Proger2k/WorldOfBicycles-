@@ -1,0 +1,44 @@
+﻿@model WorldOfBicycles.ViewModels.RegisterViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Регистрация";
+}
+
+<bodys>
+    <form method="post" asp-action="Register" asp-controller="Account" class="form">
+        <div asp-validation-summary="ModelOnly"></div>
+
+        <h3 class="form__title">
+            Регистрация
+        </h3>
+        <div class="form__input-wrapper" data-input="input-1">
+            <input type="text" class="form__input" data-input="input-1" asp-for="Name">
+            <p class="form__input-text" data-input="input-1">Name</p>
+            <span asp-validation-for="Name"></span>
+        </div>
+        <div class="form__input-wrapper" data-input="input-1">
+            <input type="email" class="form__input" data-input="input-1" asp-for="Email">
+            <p class="form__input-text" data-input="input-1">Email</p>
+            <span asp-validation-for="Email"></span>
+        </div>
+        <div class="form__input-wrapper" data-input="input-1">
+            <input type="text" class="form__input" data-input="input-1" asp-for="Year">
+            <p class="form__input-text" data-input="input-1">Year</p>
+            <span asp-validation-for="Year"></span>
+        </div>
+        <div class="form__input-wrapper" data-input="input-1">
+            <input type="password" class="form__input" data-input="input-1" asp-for="Password">
+            <p class="form__input-text" data-input="input-1">Password</p>
+            <span asp-validation-for="Password"></span>
+        </div>
+        <div class="form__input-wrapper" data-input="input-1">
+            <input type="password" class="form__input" data-input="input-1" asp-for="PasswordConfirm">
+            <p class="form__input-text" data-input="input-1">PasswordConfirm</p>
+            <span asp-validation-for="PasswordConfirm"></span>
+        </div>
+        <button class="form__btn">Login</button>
+        <p class="form__help">Don't have an account? <a href="#">Sign Up</a></p>
+    </form>
+</bodys>
+

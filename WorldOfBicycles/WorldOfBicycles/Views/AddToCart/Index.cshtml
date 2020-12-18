@@ -1,0 +1,74 @@
+﻿@model WorldOfBicycles.ViewModels.AddToCartViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Добавить в корзину";
+}
+
+<main class="mt-5 pt-4">
+    <div class="container dark-grey-text mt-5">
+        <div class="row WOW rotateInUpLeft">
+            <div class="col-md-6 mb-4">
+                <img src="@Model.Product.Img" alt="@Model.Product.Name" class="img-fluid">
+
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="p-4">
+                    <div class="mb-3">
+                        <a href="">
+                            <span class="badge purple mr-1">@Model.Product.CategoryId</span>
+                        </a>
+                        <a href="">
+                            <span class="badge blue mr-1">New</span>
+                        </a>
+                        <a href="">
+                            <span class="badge red mr-1">Bestseller</span>
+                        </a>
+                    </div>
+                    <p class="lead">
+                        <span class="mr-1">
+                            <strong>@Model.Product.Discount$</strong>
+                        </span>
+                        <span class="mr-1">
+                            @Model.Product.Price$
+                        </span>
+                    </p>
+                    <p class="lead font-weight-bold">Description</p>
+                    <p>
+                        Хорошая одежда для хороших людей
+                    </p>
+                    <form action="" class="d-flex justify-content-left" method="post">
+                        <input type="number" value="1" arial-label="Search" style="width: 100px;" class="form-control" name="count" asp-for="@Model.Product.Count">
+                        <button type="submit" class="btn btn-primary btn-md my-0 p" asp-controller="ShopCart" asp-action="AddToCart" asp-route-id="@Model.Product.Id">
+                            Add to cart <i class="fa fa-shopping-cart ml-1"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row d-flex justify-content-center wow slideOutLeft">
+            <div class="col md-6 text-center">
+                <h4 class="my-4 h4">
+                    Additional information
+                </h4>
+                <p>Модная одежда</p>
+            </div>
+
+            <div class="row wow fadeInUpBig">
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <img src="@Model.Product.Img" alt="@Model.Product.Name" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        </hr>
+    </div>
+</main>
+<div style="width: 100%">
+    <iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0"
+            marginwidth="0"
+            src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=Nauky%20Ave,%2014,%20Kharkiv,%20Kharkiv%20Oblast,%2061000+(%D0%92%D0%B5%D0%BB%D0%BE%D0%BF%D1%80%D0%BE%D0%BA%D0%B0%D1%82)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+</div>
